@@ -6,7 +6,8 @@ SPDX-License-Identifier: Apache-2.0
 
 # OnosGui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.13.
+Install Node version 10/stable to run this project.
 
 ## Development server
 
