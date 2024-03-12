@@ -55,7 +55,7 @@ export class TopoClient {
   create(
     request: CreateRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: CreateResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -77,7 +77,7 @@ export class TopoClient {
   get(
     request: GetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: GetResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -99,7 +99,7 @@ export class TopoClient {
   update(
     request: UpdateRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: UpdateResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -121,7 +121,7 @@ export class TopoClient {
   delete(
     request: DeleteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: DeleteResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -132,7 +132,10 @@ export class TopoClient {
       callback);
   }
 
-  methodInfoList = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoList = new grpcWeb.MethodDescriptor(
+    "List",
+    a,
+    ListRequest,
     ListResponse,
     (request: ListRequest) => {
       return request.serializeBinary();
@@ -143,7 +146,7 @@ export class TopoClient {
   list(
     request: ListRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: ListResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -154,7 +157,10 @@ export class TopoClient {
       callback);
   }
 
-  methodInfoWatch = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoWatch = new grpcWeb.MethodDescriptor(
+    "Watch",
+    a,
+    WatchRequest,
     WatchResponse,
     (request: WatchRequest) => {
       return request.serializeBinary();

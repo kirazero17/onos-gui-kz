@@ -46,7 +46,7 @@ export class OnosConfigDiagsService {
             stream.on('data', (resp: ListNetworkChangeResponse) => {
                 observer.next(resp);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -73,7 +73,7 @@ export class OnosConfigDiagsService {
             stream.on('data', (resp: ListDeviceChangeResponse) => {
                 observer.next(resp);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -100,7 +100,7 @@ export class OnosConfigDiagsService {
             stream.on('data', (resp: OpStateResponse) => {
                 observer.next(resp);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {

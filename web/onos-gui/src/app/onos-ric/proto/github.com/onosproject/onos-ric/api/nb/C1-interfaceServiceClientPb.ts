@@ -42,7 +42,10 @@ export class C1InterfaceServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListStations = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListStations = new grpcWeb.MethodDescriptor(
+    "ListStations",
+    a,
+    StationListRequest,
     StationInfo,
     (request: StationListRequest) => {
       return request.serializeBinary();
@@ -61,7 +64,10 @@ export class C1InterfaceServiceClient {
       this.methodInfoListStations);
   }
 
-  methodInfoListStationLinks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListStationLinks = new grpcWeb.MethodDescriptor(
+    "ListStLinks",
+    a,
+    StationLinkListRequest,
     StationLinkInfo,
     (request: StationLinkListRequest) => {
       return request.serializeBinary();
@@ -80,7 +86,10 @@ export class C1InterfaceServiceClient {
       this.methodInfoListStationLinks);
   }
 
-  methodInfoListUELinks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListUELinks = new grpcWeb.MethodDescriptor(
+    "ListUELs",
+    a,
+    UELinkListRequest,
     UELinkInfo,
     (request: UELinkListRequest) => {
       return request.serializeBinary();
@@ -99,7 +108,10 @@ export class C1InterfaceServiceClient {
       this.methodInfoListUELinks);
   }
 
-  methodInfoListUEs = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListUEs = new grpcWeb.MethodDescriptor(
+    "ListUEs",
+    a,
+    UEListRequest,
     UEInfo,
     (request: UEListRequest) => {
       return request.serializeBinary();
@@ -118,7 +130,10 @@ export class C1InterfaceServiceClient {
       this.methodInfoListUEs);
   }
 
-  methodInfoTriggerHandOver = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoTriggerHandOver = new grpcWeb.MethodDescriptor(
+    "Handover",
+    a,
+    HandOverRequest,
     HandOverResponse,
     (request: HandOverRequest) => {
       return request.serializeBinary();
@@ -129,7 +144,7 @@ export class C1InterfaceServiceClient {
   triggerHandOver(
     request: HandOverRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: HandOverResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -140,7 +155,10 @@ export class C1InterfaceServiceClient {
       callback);
   }
 
-  methodInfoSetRadioPower = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSetRadioPower = new grpcWeb.MethodDescriptor(
+    "SetRadioPower",
+    a,
+    RadioPowerRequest,
     RadioPowerResponse,
     (request: RadioPowerRequest) => {
       return request.serializeBinary();
@@ -151,7 +169,7 @@ export class C1InterfaceServiceClient {
   setRadioPower(
     request: RadioPowerRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: RadioPowerResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +

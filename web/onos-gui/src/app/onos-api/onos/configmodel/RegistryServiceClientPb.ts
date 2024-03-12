@@ -38,7 +38,10 @@ export class ConfigModelRegistryServiceClient {
     this.options_ = options;
   }
 
-  methodInfoGetModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModel = new grpcWeb.MethodDescriptor(
+    "GetModel",
+    a,
+    GetModelRequest,
     GetModelResponse,
     (request: GetModelRequest) => {
       return request.serializeBinary();
@@ -49,7 +52,7 @@ export class ConfigModelRegistryServiceClient {
   getModel(
     request: GetModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: GetModelResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -60,7 +63,10 @@ export class ConfigModelRegistryServiceClient {
       callback);
   }
 
-  methodInfoListModels = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModels = new grpcWeb.MethodDescriptor(
+    "ListModel",
+    a,
+    ListModelsRequest,
     ListModelsResponse,
     (request: ListModelsRequest) => {
       return request.serializeBinary();
@@ -71,7 +77,7 @@ export class ConfigModelRegistryServiceClient {
   listModels(
     request: ListModelsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: ListModelsResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -82,7 +88,10 @@ export class ConfigModelRegistryServiceClient {
       callback);
   }
 
-  methodInfoPushModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPushModel = new grpcWeb.MethodDescriptor(
+    "PushModel",
+    a,
+    PushModelRequest,
     PushModelResponse,
     (request: PushModelRequest) => {
       return request.serializeBinary();
@@ -93,7 +102,7 @@ export class ConfigModelRegistryServiceClient {
   pushModel(
     request: PushModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: PushModelResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -104,7 +113,10 @@ export class ConfigModelRegistryServiceClient {
       callback);
   }
 
-  methodInfoDeleteModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModel = new grpcWeb.MethodDescriptor(
+    "DeleteModel",
+    a,
+    DeleteModelRequest,
     DeleteModelResponse,
     (request: DeleteModelRequest) => {
       return request.serializeBinary();
@@ -115,7 +127,7 @@ export class ConfigModelRegistryServiceClient {
   deleteModel(
     request: DeleteModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: DeleteModelResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +

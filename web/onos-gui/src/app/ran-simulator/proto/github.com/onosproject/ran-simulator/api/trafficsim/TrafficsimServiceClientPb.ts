@@ -42,7 +42,10 @@ export class TrafficClient {
     this.options_ = options;
   }
 
-  methodInfoGetMapLayout = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetMapLayout = new grpcWeb.MethodDescriptor(
+    "GETmapLayout",
+    a,
+    MapLayoutRequest,
     github_com_onosproject_ran$simulator_api_types_types_pb.MapLayout,
     (request: MapLayoutRequest) => {
       return request.serializeBinary();
@@ -53,7 +56,7 @@ export class TrafficClient {
   getMapLayout(
     request: MapLayoutRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_onosproject_ran$simulator_api_types_types_pb.MapLayout) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -64,7 +67,10 @@ export class TrafficClient {
       callback);
   }
 
-  methodInfoListCells = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCells = new grpcWeb.MethodDescriptor(
+    "ListCells",
+    a,
+    ListCellsRequest,
     ListCellsResponse,
     (request: ListCellsRequest) => {
       return request.serializeBinary();
@@ -83,7 +89,10 @@ export class TrafficClient {
       this.methodInfoListCells);
   }
 
-  methodInfoListRoutes = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRoutes = new grpcWeb.MethodDescriptor(
+    "ListRoutes",
+    a,
+    ListRoutesRequest,
     ListRoutesResponse,
     (request: ListRoutesRequest) => {
       return request.serializeBinary();
@@ -102,7 +111,10 @@ export class TrafficClient {
       this.methodInfoListRoutes);
   }
 
-  methodInfoListUes = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListUes = new grpcWeb.MethodDescriptor(
+    "ListUEs",
+    a,
+    ListUesRequest,
     ListUesResponse,
     (request: ListUesRequest) => {
       return request.serializeBinary();
@@ -121,7 +133,10 @@ export class TrafficClient {
       this.methodInfoListUes);
   }
 
-  methodInfoSetNumberUEs = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSetNumberUEs = new grpcWeb.MethodDescriptor(
+    "SetNumberOfUEs",
+    a,
+    SetNumberUEsRequest,
     SetNumberUEsResponse,
     (request: SetNumberUEsRequest) => {
       return request.serializeBinary();
@@ -132,7 +147,7 @@ export class TrafficClient {
   setNumberUEs(
     request: SetNumberUEsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: SetNumberUEsResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -143,7 +158,10 @@ export class TrafficClient {
       callback);
   }
 
-  methodInfoResetMetrics = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResetMetrics = new grpcWeb.MethodDescriptor(
+    "ResetMetrics",
+    a,
+    ResetMetricsMsg,
     ResetMetricsMsg,
     (request: ResetMetricsMsg) => {
       return request.serializeBinary();
@@ -154,7 +172,7 @@ export class TrafficClient {
   resetMetrics(
     request: ResetMetricsMsg,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: ResetMetricsMsg) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
