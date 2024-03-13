@@ -44,7 +44,7 @@ export class TrafficClient {
 
   methodInfoGetMapLayout = new grpcWeb.MethodDescriptor(
     "GETmapLayout",
-    a,
+    grpcWeb.MethodType.UNARY,
     MapLayoutRequest,
     github_com_onosproject_ran$simulator_api_types_types_pb.MapLayout,
     (request: MapLayoutRequest) => {
@@ -69,7 +69,7 @@ export class TrafficClient {
 
   methodInfoListCells = new grpcWeb.MethodDescriptor(
     "ListCells",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListCellsRequest,
     ListCellsResponse,
     (request: ListCellsRequest) => {
@@ -91,7 +91,7 @@ export class TrafficClient {
 
   methodInfoListRoutes = new grpcWeb.MethodDescriptor(
     "ListRoutes",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListRoutesRequest,
     ListRoutesResponse,
     (request: ListRoutesRequest) => {
@@ -113,7 +113,7 @@ export class TrafficClient {
 
   methodInfoListUes = new grpcWeb.MethodDescriptor(
     "ListUEs",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListUesRequest,
     ListUesResponse,
     (request: ListUesRequest) => {
@@ -135,7 +135,7 @@ export class TrafficClient {
 
   methodInfoSetNumberUEs = new grpcWeb.MethodDescriptor(
     "SetNumberOfUEs",
-    a,
+    grpcWeb.MethodType.UNARY,
     SetNumberUEsRequest,
     SetNumberUEsResponse,
     (request: SetNumberUEsRequest) => {
@@ -160,7 +160,7 @@ export class TrafficClient {
 
   methodInfoResetMetrics = new grpcWeb.MethodDescriptor(
     "ResetMetrics",
-    a,
+    grpcWeb.MethodType.UNARY,
     ResetMetricsMsg,
     ResetMetricsMsg,
     (request: ResetMetricsMsg) => {

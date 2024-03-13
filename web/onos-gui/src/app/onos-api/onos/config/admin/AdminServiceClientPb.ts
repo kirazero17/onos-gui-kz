@@ -47,7 +47,7 @@ export class ConfigAdminServiceClient {
 
   methodInfoListRegisteredModels = new grpcWeb.MethodDescriptor(
     "ModelList",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListModelsRequest,
     ModelInfo,
     (request: ListModelsRequest) => {
@@ -69,7 +69,7 @@ export class ConfigAdminServiceClient {
 
   methodInfoRollbackNetworkChange = new grpcWeb.MethodDescriptor(
     "Rollback",
-    a,
+    grpcWeb.MethodType.UNARY,
     RollbackRequest,
     RollbackResponse,
     (request: RollbackRequest) => {
@@ -94,7 +94,7 @@ export class ConfigAdminServiceClient {
 
   methodInfoListSnapshots = new grpcWeb.MethodDescriptor(
     "ListSnapshot",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListSnapshotsRequest,
     onos_config_snapshot_device_types_pb.Snapshot,
     (request: ListSnapshotsRequest) => {
@@ -116,7 +116,7 @@ export class ConfigAdminServiceClient {
 
   methodInfoCompactChanges = new grpcWeb.MethodDescriptor(
     "CompactChanges",
-    a,
+    grpcWeb.MethodType.UNARY,
     CompactChangesRequest,
     CompactChangesResponse,
     (request: CompactChangesRequest) => {

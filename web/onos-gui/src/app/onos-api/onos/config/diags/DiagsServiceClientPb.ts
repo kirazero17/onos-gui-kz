@@ -43,7 +43,7 @@ export class ChangeServiceClient {
 
   methodInfoListNetworkChanges = new grpcWeb.MethodDescriptor(
     "ListNetChanges",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListDeviceChangeRequest,
     ListNetworkChangeResponse,
     (request: ListNetworkChangeRequest) => {
@@ -65,7 +65,7 @@ export class ChangeServiceClient {
 
   methodInfoListDeviceChanges = new grpcWeb.MethodDescriptor(
     "ListDevChanges",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListDeviceChangeRequest,
     ListDeviceChangeResponse,
     (request: ListDeviceChangeRequest) => {
@@ -108,7 +108,7 @@ export class OpStateDiagsClient {
 
   methodInfoGetOpState = new grpcWeb.MethodDescriptor(
     "OPstate",
-    a,
+    grpcWeb.MethodType.UNARY,
     OpStateRequest,
     OpStateResponse,
     (request: OpStateRequest) => {

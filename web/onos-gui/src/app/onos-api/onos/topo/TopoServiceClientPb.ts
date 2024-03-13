@@ -44,7 +44,10 @@ export class TopoClient {
     this.options_ = options;
   }
 
-  methodInfoCreate = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreate = new grpcWeb.MethodDescriptor(
+    "InfoCreate",
+    grpcWeb.MethodType.UNARY,
+    CreateRequest,
     CreateResponse,
     (request: CreateRequest) => {
       return request.serializeBinary();
@@ -66,7 +69,10 @@ export class TopoClient {
       callback);
   }
 
-  methodInfoGet = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGet = new grpcWeb.MethodDescriptor(
+    "Get",
+    grpcWeb.MethodType.UNARY,
+    GetRequest,
     GetResponse,
     (request: GetRequest) => {
       return request.serializeBinary();
@@ -88,7 +94,10 @@ export class TopoClient {
       callback);
   }
 
-  methodInfoUpdate = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdate = new grpcWeb.MethodDescriptor(
+    "Update",
+    grpcWeb.MethodType.UNARY,
+    UpdateRequest,
     UpdateResponse,
     (request: UpdateRequest) => {
       return request.serializeBinary();
@@ -110,7 +119,10 @@ export class TopoClient {
       callback);
   }
 
-  methodInfoDelete = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDelete = new grpcWeb.MethodDescriptor(
+    "Delete",
+    grpcWeb.MethodType.UNARY,
+    DeleteRequest,
     DeleteResponse,
     (request: DeleteRequest) => {
       return request.serializeBinary();
@@ -134,7 +146,7 @@ export class TopoClient {
 
   methodInfoList = new grpcWeb.MethodDescriptor(
     "List",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListRequest,
     ListResponse,
     (request: ListRequest) => {
@@ -159,7 +171,7 @@ export class TopoClient {
 
   methodInfoWatch = new grpcWeb.MethodDescriptor(
     "Watch",
-    a,
+    grpcWeb.MethodType.UNARY,
     WatchRequest,
     WatchResponse,
     (request: WatchRequest) => {

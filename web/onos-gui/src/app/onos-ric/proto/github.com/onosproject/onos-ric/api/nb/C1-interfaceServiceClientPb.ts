@@ -44,7 +44,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListStations = new grpcWeb.MethodDescriptor(
     "ListStations",
-    a,
+    grpcWeb.MethodType.UNARY,
     StationListRequest,
     StationInfo,
     (request: StationListRequest) => {
@@ -66,7 +66,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListStationLinks = new grpcWeb.MethodDescriptor(
     "ListStLinks",
-    a,
+    grpcWeb.MethodType.UNARY,
     StationLinkListRequest,
     StationLinkInfo,
     (request: StationLinkListRequest) => {
@@ -88,7 +88,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListUELinks = new grpcWeb.MethodDescriptor(
     "ListUELs",
-    a,
+    grpcWeb.MethodType.UNARY,
     UELinkListRequest,
     UELinkInfo,
     (request: UELinkListRequest) => {
@@ -110,7 +110,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListUEs = new grpcWeb.MethodDescriptor(
     "ListUEs",
-    a,
+    grpcWeb.MethodType.UNARY,
     UEListRequest,
     UEInfo,
     (request: UEListRequest) => {
@@ -132,7 +132,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoTriggerHandOver = new grpcWeb.MethodDescriptor(
     "Handover",
-    a,
+    grpcWeb.MethodType.UNARY,
     HandOverRequest,
     HandOverResponse,
     (request: HandOverRequest) => {
@@ -157,7 +157,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoSetRadioPower = new grpcWeb.MethodDescriptor(
     "SetRadioPower",
-    a,
+    grpcWeb.MethodType.UNARY,
     RadioPowerRequest,
     RadioPowerResponse,
     (request: RadioPowerRequest) => {

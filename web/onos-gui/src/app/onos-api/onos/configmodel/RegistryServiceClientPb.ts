@@ -40,7 +40,7 @@ export class ConfigModelRegistryServiceClient {
 
   methodInfoGetModel = new grpcWeb.MethodDescriptor(
     "GetModel",
-    a,
+    grpcWeb.MethodType.UNARY,
     GetModelRequest,
     GetModelResponse,
     (request: GetModelRequest) => {
@@ -65,7 +65,7 @@ export class ConfigModelRegistryServiceClient {
 
   methodInfoListModels = new grpcWeb.MethodDescriptor(
     "ListModel",
-    a,
+    grpcWeb.MethodType.UNARY,
     ListModelsRequest,
     ListModelsResponse,
     (request: ListModelsRequest) => {
@@ -90,7 +90,7 @@ export class ConfigModelRegistryServiceClient {
 
   methodInfoPushModel = new grpcWeb.MethodDescriptor(
     "PushModel",
-    a,
+    grpcWeb.MethodType.UNARY,
     PushModelRequest,
     PushModelResponse,
     (request: PushModelRequest) => {
@@ -115,7 +115,7 @@ export class ConfigModelRegistryServiceClient {
 
   methodInfoDeleteModel = new grpcWeb.MethodDescriptor(
     "DeleteModel",
-    a,
+    grpcWeb.MethodType.UNARY,
     DeleteModelRequest,
     DeleteModelResponse,
     (request: DeleteModelRequest) => {

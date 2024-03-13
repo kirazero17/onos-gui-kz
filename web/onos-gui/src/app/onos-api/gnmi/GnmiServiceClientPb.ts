@@ -44,7 +44,7 @@ export class gNMIClient {
 
   methodInfoCapabilities = new grpcWeb.MethodDescriptor(
     "GetCapabilities",
-    a,
+    grpcWeb.MethodType.UNARY,
     CapabilityRequest,
     CapabilityResponse,
     (request: CapabilityRequest) => {
@@ -69,7 +69,7 @@ export class gNMIClient {
 
   methodInfoGet = new grpcWeb.MethodDescriptor(
     "GetInfo",
-    a,
+    grpcWeb.MethodType.UNARY,
     GetRequest,
     GetResponse,
     (request: GetRequest) => {
@@ -94,7 +94,7 @@ export class gNMIClient {
 
   methodInfoSet = new grpcWeb.MethodDescriptor(
     "SetInfo",
-    a,
+    grpcWeb.MethodType.UNARY,
     SetRequest,
     SetResponse,
     (request: SetRequest) => {
