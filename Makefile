@@ -22,7 +22,7 @@ coverage: # @HELP generate unit test coverage data
 coverage: deps build license test
 
 deps: # @HELP ensure that the required dependencies are in place
-	cd web/onos-gui && NG_CLI_ANALYTICS=false npm install
+	cd web/onos-gui && NG_CLI_ANALYTICS=false npm install -f
 
 lint: # @HELP run the linters for Typescript source code
 	cd web/onos-gui && npx ng lint
