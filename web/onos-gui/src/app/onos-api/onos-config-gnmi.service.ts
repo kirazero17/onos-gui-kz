@@ -21,9 +21,9 @@ import {
     RegisteredExtension
 } from './gnmi_ext/gnmi_ext_pb';
 
-type CapabilityCallback = (e: grpcWeb.Error, r: CapabilityResponse) => void;
-type GnmiGetCallback = (e: grpcWeb.Error, r: GetResponse) => void;
-type GnmiSetCallback = (e: grpcWeb.Error, r: SetResponse) => void;
+type CapabilityCallback = (e: grpcWeb.RpcError, r: CapabilityResponse) => void;
+type GnmiGetCallback = (e: grpcWeb.RpcError, r: GetResponse) => void;
+type GnmiSetCallback = (e: grpcWeb.RpcError, r: SetResponse) => void;
 
 @Injectable()
 export class OnosConfigGnmiService {

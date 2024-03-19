@@ -37,7 +37,7 @@ export class ConfigModelRegistryService {
                     observer.next(resp);
                 }
             });
-            call.on('error', (error: grpcWeb.Error) => {
+            call.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             call.on('end', () => {

@@ -41,7 +41,10 @@ export class ChangeServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListNetworkChanges = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListNetworkChanges = new grpcWeb.MethodDescriptor(
+    "ListNetChanges",
+    grpcWeb.MethodType.UNARY,
+    ListDeviceChangeRequest,
     ListNetworkChangeResponse,
     (request: ListNetworkChangeRequest) => {
       return request.serializeBinary();
@@ -60,7 +63,10 @@ export class ChangeServiceClient {
       this.methodInfoListNetworkChanges);
   }
 
-  methodInfoListDeviceChanges = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDeviceChanges = new grpcWeb.MethodDescriptor(
+    "ListDevChanges",
+    grpcWeb.MethodType.UNARY,
+    ListDeviceChangeRequest,
     ListDeviceChangeResponse,
     (request: ListDeviceChangeRequest) => {
       return request.serializeBinary();
@@ -100,7 +106,10 @@ export class OpStateDiagsClient {
     this.options_ = options;
   }
 
-  methodInfoGetOpState = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetOpState = new grpcWeb.MethodDescriptor(
+    "OPstate",
+    grpcWeb.MethodType.UNARY,
+    OpStateRequest,
     OpStateResponse,
     (request: OpStateRequest) => {
       return request.serializeBinary();

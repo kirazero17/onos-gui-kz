@@ -30,7 +30,7 @@ export enum DeviceSortCriterion {
     VERSION
 }
 
-export type ErrorCallback = (e: grpcWeb.Error) => void;
+export type ErrorCallback = (e: grpcWeb.RpcError) => void;
 
 /**
  * DeviceService allows consistent tracking of all known devices from

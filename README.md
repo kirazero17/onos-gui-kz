@@ -7,5 +7,7 @@ SPDX-License-Identifier: Apache-2.0
 # onos-gui project
 GUI for ONOS (µONOS Architecture)
 
+=======
+
 See [README.md](docs/README.md) for full documentation.<br/>
 Install Node version 10/stable to run this project.

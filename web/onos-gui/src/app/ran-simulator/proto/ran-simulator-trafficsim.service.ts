@@ -43,7 +43,7 @@ export class RanSimulatorTrafficsimService {
                 } else {
                     observer.next(response);
                 }
-                call.on('error', (error: grpcWeb.Error) => {
+                call.on('error', (error: grpcWeb.RpcError) => {
                     observer.error(error);
                 });
                 call.on('end', () => {
@@ -65,7 +65,7 @@ export class RanSimulatorTrafficsimService {
             stream.on('data', (tower: ListCellsResponse) => {
                 observer.next(tower);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -91,7 +91,7 @@ export class RanSimulatorTrafficsimService {
             stream.on('data', (resp: ListRoutesResponse) => {
                 observer.next(resp);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -115,7 +115,7 @@ export class RanSimulatorTrafficsimService {
             stream.on('data', (resp: ListUesResponse) => {
                 observer.next(resp);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -139,7 +139,7 @@ export class RanSimulatorTrafficsimService {
                 } else {
                     observer.next(resp);
                 }
-                call.on('error', (error: grpcWeb.Error) => {
+                call.on('error', (error: grpcWeb.RpcError) => {
                     observer.error(error);
                 });
                 call.on('end', () => {

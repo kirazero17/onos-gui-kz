@@ -38,7 +38,7 @@ export class OnosTopoEntityService {
             stream.on('data', (subscribeResponse: WatchResponse) => {
                 observer.next(subscribeResponse);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {

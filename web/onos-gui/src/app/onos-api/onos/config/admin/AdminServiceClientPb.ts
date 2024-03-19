@@ -45,7 +45,10 @@ export class ConfigAdminServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListRegisteredModels = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRegisteredModels = new grpcWeb.MethodDescriptor(
+    "ModelList",
+    grpcWeb.MethodType.UNARY,
+    ListModelsRequest,
     ModelInfo,
     (request: ListModelsRequest) => {
       return request.serializeBinary();
@@ -64,7 +67,10 @@ export class ConfigAdminServiceClient {
       this.methodInfoListRegisteredModels);
   }
 
-  methodInfoRollbackNetworkChange = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRollbackNetworkChange = new grpcWeb.MethodDescriptor(
+    "Rollback",
+    grpcWeb.MethodType.UNARY,
+    RollbackRequest,
     RollbackResponse,
     (request: RollbackRequest) => {
       return request.serializeBinary();
@@ -75,7 +81,7 @@ export class ConfigAdminServiceClient {
   rollbackNetworkChange(
     request: RollbackRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: RollbackResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -86,7 +92,10 @@ export class ConfigAdminServiceClient {
       callback);
   }
 
-  methodInfoListSnapshots = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListSnapshots = new grpcWeb.MethodDescriptor(
+    "ListSnapshot",
+    grpcWeb.MethodType.UNARY,
+    ListSnapshotsRequest,
     onos_config_snapshot_device_types_pb.Snapshot,
     (request: ListSnapshotsRequest) => {
       return request.serializeBinary();
@@ -105,7 +114,10 @@ export class ConfigAdminServiceClient {
       this.methodInfoListSnapshots);
   }
 
-  methodInfoCompactChanges = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCompactChanges = new grpcWeb.MethodDescriptor(
+    "CompactChanges",
+    grpcWeb.MethodType.UNARY,
+    CompactChangesRequest,
     CompactChangesResponse,
     (request: CompactChangesRequest) => {
       return request.serializeBinary();
@@ -116,7 +128,7 @@ export class ConfigAdminServiceClient {
   compactChanges(
     request: CompactChangesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: CompactChangesResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
