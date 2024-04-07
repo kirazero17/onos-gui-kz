@@ -44,7 +44,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListStations = new grpcWeb.MethodDescriptor(
     "ListStations",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     StationListRequest,
     StationInfo,
     (request: StationListRequest) => {
@@ -66,7 +66,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListStationLinks = new grpcWeb.MethodDescriptor(
     "ListStLinks",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     StationLinkListRequest,
     StationLinkInfo,
     (request: StationLinkListRequest) => {
@@ -88,7 +88,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListUELinks = new grpcWeb.MethodDescriptor(
     "ListUELs",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     UELinkListRequest,
     UELinkInfo,
     (request: UELinkListRequest) => {
@@ -110,7 +110,7 @@ export class C1InterfaceServiceClient {
 
   methodInfoListUEs = new grpcWeb.MethodDescriptor(
     "ListUEs",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     UEListRequest,
     UEInfo,
     (request: UEListRequest) => {

@@ -6,7 +6,7 @@
 
 import {Inject, Injectable} from '@angular/core';
 import {
-    ChangeServiceClient,
+    ConfigDiagsServiceClient,
     OpStateDiagsClient
 } from './onos/config/diags/DiagsServiceClientPb';
 import {
@@ -21,14 +21,14 @@ import * as grpcWeb from 'grpc-web';
 
 @Injectable()
 export class OnosConfigDiagsService {
-    diagsService: ChangeServiceClient;
+    diagsService: ConfigDiagsServiceClient;
     opStateService: OpStateDiagsClient;
 
     constructor(
         private idToken: string,
         private onosConfigUrl: string
     ) {
-        this.diagsService = new ChangeServiceClient(onosConfigUrl);
+        this.diagsService = new ConfigDiagsServiceClient(onosConfigUrl);
         this.opStateService = new OpStateDiagsClient(onosConfigUrl);
 
         console.log('Config Diags Url ', onosConfigUrl);

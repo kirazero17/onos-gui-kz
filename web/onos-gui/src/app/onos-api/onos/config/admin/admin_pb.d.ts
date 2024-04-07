@@ -6,7 +6,7 @@ import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/du
 import * as gogoproto_gogo_pb from '../../../gogoproto/gogo_pb';
 import * as github_com_openconfig_gnmi_proto_gnmi_gnmi_pb from '../../../gnmi/gnmi_pb';
 import * as onos_config_change_device_types_pb from '../../../onos/config/change/device/types_pb';
-import * as onos_config_snapshot_device_types_pb from '../../../onos/config/snapshot/device/types_pb';
+import * as onos_config_configuration_device_types_pb from '../../../onos/config/configuration/device/types_pb';
 
 export class ReadOnlySubPath extends jspb.Message {
   getSubPath(): string;
@@ -264,7 +264,7 @@ export namespace RollbackResponse {
   }
 }
 
-export class ListSnapshotsRequest extends jspb.Message {
+export class ListConfigurationsRequest extends jspb.Message {
   getSubscribe(): boolean;
   setSubscribe(value: boolean): void;
 
@@ -272,14 +272,14 @@ export class ListSnapshotsRequest extends jspb.Message {
   setId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSnapshotsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSnapshotsRequest): ListSnapshotsRequest.AsObject;
-  static serializeBinaryToWriter(message: ListSnapshotsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSnapshotsRequest;
-  static deserializeBinaryFromReader(message: ListSnapshotsRequest, reader: jspb.BinaryReader): ListSnapshotsRequest;
+  toObject(includeInstance?: boolean): ListConfigurationsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListConfigurationsRequest): ListConfigurationsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListConfigurationsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListConfigurationsRequest;
+  static deserializeBinaryFromReader(message: ListConfigurationsRequest, reader: jspb.BinaryReader): ListConfigurationsRequest;
 }
 
-export namespace ListSnapshotsRequest {
+export namespace ListConfigurationsRequest {
   export type AsObject = {
     subscribe: boolean,
     id: string,

@@ -93,7 +93,7 @@ export class LayerSvgComponent implements OnChanges {
     constructor(
         private diags: OnosConfigDiagsService,
         private models: ModelService,
-        // private pending: PendingNetChangeService,
+        // private pending: PendingNetConfigDiagsService,
         private modelTempIdx: ModelTempIndexService,
     ) {
         this.nodelist = new Map<string, ChangeValueObj>();

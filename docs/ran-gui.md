@@ -47,7 +47,7 @@ disconnected however by clearing on the "Connected" checkbox.
 
 Single updates of the current state can be had by clicking the "Refresh" button.
 
-> This can be useful to get a visual snapshot of UE counts and positions while not
+> This can be useful to get a visual configuration of UE counts and positions while not
 > burdening the system with constantly having to send updates.
 
 ![onos-gui-ran-simulator-mapview](images/onos-gui-ran-simulator-mapview.png)

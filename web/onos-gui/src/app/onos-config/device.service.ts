@@ -19,7 +19,7 @@ import {DeviceChange} from '../onos-api/onos/config/change/device/types_pb';
 import {from, Observable, Subscription} from 'rxjs';
 import {takeWhile} from 'rxjs/operators';
 import {OnosConfigAdminService} from '../onos-api/onos-config-admin.service';
-import {Snapshot} from '../onos-api/onos/config/snapshot/device/types_pb';
+import {Configuration} from '../onos-api/onos/config/configuration/device/types_pb';
 import {KeyValue} from '@angular/common';
 import * as grpcWeb from 'grpc-web';
 
@@ -42,18 +42,18 @@ export type ErrorCallback = (e: grpcWeb.RpcError) => void;
 export class DeviceService {
     entityList: Map<string, EntityObject>; // Expect <dev-id:dev-ver> as key
     deviceChangeMap: Map<string, DeviceChange>; // Expect <dev-id:dev-ver> as key
-    deviceSnapshotMap: Map<string, Snapshot>; // Expect <dev-id:dev-ver> as key
+    deviceConfigurationMap: Map<string, Configuration>; // Expect <dev-id:dev-ver> as key
     diags: OnosConfigDiagsService;
     admin: OnosConfigAdminService;
     deviceChangesObs: Observable<[string, DeviceChange]>;
-    snapshotSub: Subscription;
+    configurationSub: Subscription;
 
     constructor(diags: OnosConfigDiagsService,
                 admin: OnosConfigAdminService) {
         this.entityList = new Map<string, EntityObject>();
         this.deviceChangeMap = new Map<string, DeviceChange>();
         this.deviceChangesObs = from(this.deviceChangeMap).pipe(takeWhile<[string, DeviceChange]>((dcId, dc) => true));
-        this.deviceSnapshotMap = new Map<string, Snapshot>();
+        this.deviceConfigurationMap = new Map<string, Configuration>();
 
         this.diags = diags;
         this.admin = admin;
@@ -132,27 +132,27 @@ export class DeviceService {
         return stateAsNumber;
     }
 
-    watchSnapshots(errorCb: ErrorCallback) {
-        this.snapshotSub = this.admin.requestSnapshots('').subscribe(
-    (s: Snapshot) => {
-            console.log('List Snapshots response for', s.getId(), s.getSnapshotId(), s.getValuesList().length);
+    watchConfigurations(errorCb: ErrorCallback) {
+        this.configurationSub = this.admin.requestConfigurations('').subscribe(
+    (s: Configuration) => {
+            console.log('List Configurations response for', s.getId(), s.getConfigurationId(), s.getValuesList().length);
             if (!this.entityList.has(s.getId())) {
                 this.addEntity(s.getDeviceId(), s.getDeviceType(), s.getDeviceVersion(), false, errorCb);
             }
-            this.deviceSnapshotMap.set(s.getId(), s);
+            this.deviceConfigurationMap.set(s.getId(), s);
             },
     (error) => {
-            console.log('Error on snapshot subscription', error);
+            console.log('Error on configuration subscription', error);
             errorCb(error);
             }
         );
     }
 
-    stopWatchingSnapshots() {
-        if (this.snapshotSub) {
-            this.snapshotSub.unsubscribe();
+    stopWatchingConfigurations() {
+        if (this.configurationSub) {
+            this.configurationSub.unsubscribe();
         }
-        console.log('Stopped watching snapshots');
+        console.log('Stopped watching configurations');
     }
 
     addTopoEntity(entity: EntityObject) {

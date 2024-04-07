@@ -6,21 +6,21 @@
 
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import {DeviceSnapshotComponent} from './device-snapshot.component';
+import {DeviceConfigurationComponent} from './device-configuration.component';
 
-describe('DeviceSnapshotComponent', () => {
-    let component: DeviceSnapshotComponent;
-    let fixture: ComponentFixture<DeviceSnapshotComponent>;
+describe('DeviceConfigurationComponent', () => {
+    let component: DeviceConfigurationComponent;
+    let fixture: ComponentFixture<DeviceConfigurationComponent>;
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [DeviceSnapshotComponent]
+            declarations: [DeviceConfigurationComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(DeviceSnapshotComponent);
+        fixture = TestBed.createComponent(DeviceConfigurationComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

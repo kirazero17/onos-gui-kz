@@ -6,25 +6,25 @@
 
 import {TestBed} from '@angular/core/testing';
 
-import {PendingNetChangeService} from './pending-net-change.service';
+import {PendingNetConfigDiagsService} from './pending-net-change.service';
 
-describe('PendingNetChangeService', () => {
+describe('PendingNetConfigDiagsService', () => {
     beforeEach(() => TestBed.configureTestingModule({
         providers: [
             {
-                provide: PendingNetChangeService,
-                useClass: PendingNetChangeService
+                provide: PendingNetConfigDiagsService,
+                useClass: PendingNetConfigDiagsService
             }
         ],
     }));
 
     it('should be created', () => {
-        const service: PendingNetChangeService = TestBed.get(PendingNetChangeService);
+        const service: PendingNetConfigDiagsService = TestBed.get(PendingNetConfigDiagsService);
         expect(service).toBeTruthy();
     });
 
     it('should create gnmiPath', () => {
-        const service: PendingNetChangeService = TestBed.get(PendingNetChangeService);
+        const service: PendingNetConfigDiagsService = TestBed.get(PendingNetConfigDiagsService);
         const gnmiPaths = service.toGnmiPathElems(['a', 'b', 'c', 'd', 'e']);
 
         expect(gnmiPaths.length).toEqual(5);
@@ -36,7 +36,7 @@ describe('PendingNetChangeService', () => {
     });
 
     it('should create gnmiPath with 2 indices', () => {
-        const service: PendingNetChangeService = TestBed.get(PendingNetChangeService);
+        const service: PendingNetConfigDiagsService = TestBed.get(PendingNetConfigDiagsService);
         const gnmiPaths = service.toGnmiPathElems(['a', 'b[name=1/0]', 'c', 'd', 'e[facility=1,severity=2]']);
 
         expect(gnmiPaths.length).toEqual(5);

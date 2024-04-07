@@ -22,7 +22,7 @@ import {
   OpStateRequest,
   OpStateResponse} from './diags_pb';
 
-export class ChangeServiceClient {
+export class ConfigDiagsServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -42,9 +42,9 @@ export class ChangeServiceClient {
   }
 
   methodInfoListNetworkChanges = new grpcWeb.MethodDescriptor(
-    "ListNetChanges",
-    grpcWeb.MethodType.UNARY,
-    ListDeviceChangeRequest,
+    "ListNetworkChanges",
+    grpcWeb.MethodType.SERVER_STREAMING,
+    ListNetworkChangeRequest,
     ListNetworkChangeResponse,
     (request: ListNetworkChangeRequest) => {
       return request.serializeBinary();
@@ -64,8 +64,8 @@ export class ChangeServiceClient {
   }
 
   methodInfoListDeviceChanges = new grpcWeb.MethodDescriptor(
-    "ListDevChanges",
-    grpcWeb.MethodType.UNARY,
+    "ListDeviceChanges",
+    grpcWeb.MethodType.SERVER_STREAMING,
     ListDeviceChangeRequest,
     ListDeviceChangeResponse,
     (request: ListDeviceChangeRequest) => {
@@ -107,8 +107,8 @@ export class OpStateDiagsClient {
   }
 
   methodInfoGetOpState = new grpcWeb.MethodDescriptor(
-    "OPstate",
-    grpcWeb.MethodType.UNARY,
+    "GetOpState",
+    grpcWeb.MethodType.SERVER_STREAMING,
     OpStateRequest,
     OpStateResponse,
     (request: OpStateRequest) => {

@@ -6,21 +6,21 @@
 
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import {NetworkSnapshotComponent} from './network-snapshot.component';
+import {NetworkConfigurationComponent} from './network-configuration.component';
 
-describe('NetworkSnapshotComponent', () => {
-    let component: NetworkSnapshotComponent;
-    let fixture: ComponentFixture<NetworkSnapshotComponent>;
+describe('NetworkConfigurationComponent', () => {
+    let component: NetworkConfigurationComponent;
+    let fixture: ComponentFixture<NetworkConfigurationComponent>;
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [NetworkSnapshotComponent]
+            declarations: [NetworkConfigurationComponent]
         })
             .compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(NetworkSnapshotComponent);
+        fixture = TestBed.createComponent(NetworkConfigurationComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

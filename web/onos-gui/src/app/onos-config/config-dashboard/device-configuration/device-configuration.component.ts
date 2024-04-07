@@ -6,15 +6,15 @@
 
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {DeviceService} from '../../device.service';
-import {Snapshot} from '../../../onos-api/onos/config/snapshot/device/types_pb';
+import {Configuration} from '../../../onos-api/onos/config/configuration/device/types_pb';
 
 @Component({
-    selector: '[onos-device-snapshot]',
-    templateUrl: './device-snapshot.component.html',
-    styleUrls: ['./device-snapshot.component.css']
+    selector: '[onos-device-configuration]',
+    templateUrl: './device-configuration.component.html',
+    styleUrls: ['./device-configuration.component.css']
 })
-export class DeviceSnapshotComponent {
-    @Input() deviceSnapshot: Snapshot;
+export class DeviceConfigurationComponent {
+    @Input() deviceConfiguration: Configuration;
     @Output() selected  = new EventEmitter<boolean>();
 
     constructor(

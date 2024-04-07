@@ -73,9 +73,9 @@ SPDX-License-Identifier: Apache-2.0
         (dcSelected)="deviceChangeSelected($event, nwchId.key)"
         (rollbackSelected)="rollbackDialog($event, nwchId.key)">
     </tr>
-    <tr class="nw-ss-row" onos-network-snapshot
+    <tr class="nw-ss-row" onos-network-configuration
         [deviceSortCriterion]="deviceSortCriterion"
-        (dsSelected)="deviceSnapshotSelected($event)"></tr>
+        (dsSelected)="deviceConfigurationSelected($event)"></tr>
     </tbody>
 </table>
 

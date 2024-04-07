@@ -63,13 +63,13 @@ SPDX-License-Identifier: Apache-2.0
     <div class="footer">
         <table>
             <tbody>
-            <tr id="snapshot-layer" class="layerItem"
+            <tr id="configuration-layer" class="layerItem"
                 (click)="toggleDisplay(SNAPSHOT, 5)">
                 <onos-icon
                     [iconId]="hiddenLayers.includes(SNAPSHOT) ? INACTIVE : ACTIVE"
                     [iconSize]="20"
                     [classes]="hiddenLayers.includes(SNAPSHOT) ? INACTIVE:ACTIVE"></onos-icon>
-                <td class="snapshot">Snapshot</td>
+                <td class="configuration">Configuration</td>
             </tr>
             <tr id="opstate-layer" class="layerItem" *ngIf="hasOpState"
                 (click)="toggleDisplay(OPSTATE, 1)">
