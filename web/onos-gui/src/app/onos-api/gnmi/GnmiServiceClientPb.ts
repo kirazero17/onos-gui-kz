@@ -42,7 +42,10 @@ export class gNMIClient {
     this.options_ = options;
   }
 
-  methodInfoCapabilities = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCapabilities = new grpcWeb.MethodDescriptor(
+    "GetCapabilities",
+    grpcWeb.MethodType.UNARY,
+    CapabilityRequest,
     CapabilityResponse,
     (request: CapabilityRequest) => {
       return request.serializeBinary();
@@ -53,7 +56,7 @@ export class gNMIClient {
   capabilities(
     request: CapabilityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: CapabilityResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -64,7 +67,10 @@ export class gNMIClient {
       callback);
   }
 
-  methodInfoGet = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGet = new grpcWeb.MethodDescriptor(
+    "GetInfo",
+    grpcWeb.MethodType.UNARY,
+    GetRequest,
     GetResponse,
     (request: GetRequest) => {
       return request.serializeBinary();
@@ -75,7 +81,7 @@ export class gNMIClient {
   get(
     request: GetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: GetResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
@@ -86,7 +92,10 @@ export class gNMIClient {
       callback);
   }
 
-  methodInfoSet = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoSet = new grpcWeb.MethodDescriptor(
+    "SetInfo",
+    grpcWeb.MethodType.UNARY,
+    SetRequest,
     SetResponse,
     (request: SetRequest) => {
       return request.serializeBinary();
@@ -97,7 +106,7 @@ export class gNMIClient {
   set(
     request: SetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: SetResponse) => void) {
     return this.client_.rpcCall(
       this.hostname_ +

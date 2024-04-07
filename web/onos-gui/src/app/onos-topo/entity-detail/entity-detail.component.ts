@@ -70,7 +70,7 @@ export class EntityDetailComponent extends DetailsPanelBaseImpl implements OnIni
         this.init();
         console.debug('entity Detail Component initialized:', this.id);
         this.connectivityService.hideVeil();
-        this.topoDeviceService.watchTopoEntity((err: grpcWeb.Error) => {
+        this.topoDeviceService.watchTopoEntity((err: grpcWeb.RpcError) => {
             this.connectivityService.showVeil([
                 'Topo Entity service gRPC error', String(err.code), err.message,
                 'Please ensure onos-topo is reachable',

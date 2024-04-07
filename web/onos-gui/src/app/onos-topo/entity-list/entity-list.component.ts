@@ -55,7 +55,7 @@ export class EntityListComponent implements OnInit, OnDestroy {
     console.log(this.topoDeviceService.entityList.size);
 
     this.connectivityService.hideVeil();
-    this.topoDeviceService.watchTopoEntity((err: grpcWeb.Error) => {
+    this.topoDeviceService.watchTopoEntity((err: grpcWeb.RpcError) => {
       this.connectivityService.showVeil([
         'Topo Entity service gRPC error', String(err.code), err.message,
         'Please ensure onos-topo is reachable',

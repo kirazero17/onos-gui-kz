@@ -8,7 +8,7 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    customLaunchers: {
+    /**customLaunchers: {
       ChromeHeadlessNoSandbox: {
           base: 'ChromeHeadless',
           flags: [
@@ -17,7 +17,7 @@ module.exports = function (config) {
               '--disable-web-security'
           ]
       }
-    },
+    },**/
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
@@ -39,7 +39,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    //browsers: ['Chrome'],
     singleRun: false
   });
 };

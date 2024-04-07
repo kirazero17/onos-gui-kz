@@ -51,7 +51,7 @@ export class OnosConfigAdminService {
                 } else {
                     observer.next(resp);
                 }
-                call.on('error', (error: grpcWeb.Error) => {
+                call.on('error', (error: grpcWeb.RpcError) => {
                     observer.error(error);
                 });
                 call.on('end', () => {
@@ -78,7 +78,7 @@ export class OnosConfigAdminService {
             stream.on('data', (modelInfo: ModelInfo) => {
                 observer.next(modelInfo);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -104,7 +104,7 @@ export class OnosConfigAdminService {
             stream.on('data', (snapshot: Snapshot) => {
                 observer.next(snapshot);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -131,7 +131,7 @@ export class OnosConfigAdminService {
                     observer.next(resp);
                 }
             });
-            call.on('error', (error: grpcWeb.Error) => {
+            call.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             call.on('end', () => {

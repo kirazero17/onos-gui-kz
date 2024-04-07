@@ -31,7 +31,7 @@ export class TopoEntityService {
         this.relationshipsList = new Map<string, EntityObject>();
     }
 
-    watchTopoEntity(errorCb: (e: grpcWeb.Error) => void, updateCb?: (type: EventType, entity: EntityObject) => void) {
+    watchTopoEntity(errorCb: (e: grpcWeb.RpcError) => void, updateCb?: (type: EventType, entity: EntityObject) => void) {
         this.topoEntitySub = this.onosTopoEntityService.requestListTopo().pipe(
             filter(x => x.getEvent().getObject().getType() === 1 || x.getEvent().getObject().getType() === 2)
         ).subscribe(

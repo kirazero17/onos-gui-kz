@@ -39,7 +39,7 @@ export class OnosRicC1Service {
             stream.on('data', (uelink: UELinkInfo) => {
                 observer.next(uelink);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -59,7 +59,7 @@ export class OnosRicC1Service {
             stream.on('data', (stationInfo: StationInfo) => {
                 observer.next(stationInfo);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {
@@ -80,7 +80,7 @@ export class OnosRicC1Service {
             stream.on('data', (stationLinkInfo: StationLinkInfo) => {
                 observer.next(stationLinkInfo);
             });
-            stream.on('error', (error: grpcWeb.Error) => {
+            stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
             });
             stream.on('end', () => {

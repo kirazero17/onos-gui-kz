@@ -65,7 +65,7 @@ export class ModelsListComponent extends TableBaseImpl implements OnInit, OnDest
         this.connectivityService.hideVeil();
         this.selId = undefined;
         this.tableData = this.modelService.modelInfoList;
-        this.modelService.loadModelList((err: grpcWeb.Error) => {
+        this.modelService.loadModelList((err: grpcWeb.RpcError) => {
             this.connectivityService.showVeil([
                 'Model list service gRPC error', String(err.code), err.message,
                 'Please ensure onos-config is reachable',

@@ -100,7 +100,7 @@ export class UelinksComponent implements OnInit, OnDestroy {
                     }
                 }
             },
-            (err: grpcWeb.Error) => {
+            (err: grpcWeb.RpcError) => {
                 this.connectivityService.showVeil([
                     'UE Links gRPC error', String(err.code), err.message,
                     'Please ensure onos-ric is reachable']);
