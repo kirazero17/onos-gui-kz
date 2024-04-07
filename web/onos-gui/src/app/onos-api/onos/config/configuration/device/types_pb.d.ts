@@ -4,10 +4,10 @@ import * as jspb from "google-protobuf"
 
 import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
 import * as gogoproto_gogo_pb from '../../../../gogoproto/gogo_pb';
-import * as onos_config_snapshot_types_pb from '../../../../onos/config/snapshot/types_pb';
-import * as onos_config_change_device_types_pb from '../../../../onos/config/change/device/types_pb';
+import * as onos_config_configuration_types_pb from '../types_pb';
+import * as onos_config_change_device_types_pb from '../../change/device/types_pb';
 
-export class DeviceSnapshot extends jspb.Message {
+export class DeviceConfiguration extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
@@ -23,16 +23,16 @@ export class DeviceSnapshot extends jspb.Message {
   getRevision(): number;
   setRevision(value: number): void;
 
-  getNetworkSnapshot(): NetworkSnapshotRef | undefined;
-  setNetworkSnapshot(value?: NetworkSnapshotRef): void;
-  hasNetworkSnapshot(): boolean;
-  clearNetworkSnapshot(): void;
+  getNetworkConfiguration(): NetworkConfigurationRef | undefined;
+  setNetworkConfiguration(value?: NetworkConfigurationRef): void;
+  hasNetworkConfiguration(): boolean;
+  clearNetworkConfiguration(): void;
 
   getMaxNetworkChangeIndex(): number;
   setMaxNetworkChangeIndex(value: number): void;
 
-  getStatus(): onos_config_snapshot_types_pb.Status | undefined;
-  setStatus(value?: onos_config_snapshot_types_pb.Status): void;
+  getStatus(): onos_config_configuration_types_pb.Status | undefined;
+  setStatus(value?: onos_config_configuration_types_pb.Status): void;
   hasStatus(): boolean;
   clearStatus(): void;
 
@@ -47,29 +47,29 @@ export class DeviceSnapshot extends jspb.Message {
   clearUpdated(): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeviceSnapshot.AsObject;
-  static toObject(includeInstance: boolean, msg: DeviceSnapshot): DeviceSnapshot.AsObject;
-  static serializeBinaryToWriter(message: DeviceSnapshot, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeviceSnapshot;
-  static deserializeBinaryFromReader(message: DeviceSnapshot, reader: jspb.BinaryReader): DeviceSnapshot;
+  toObject(includeInstance?: boolean): DeviceConfiguration.AsObject;
+  static toObject(includeInstance: boolean, msg: DeviceConfiguration): DeviceConfiguration.AsObject;
+  static serializeBinaryToWriter(message: DeviceConfiguration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeviceConfiguration;
+  static deserializeBinaryFromReader(message: DeviceConfiguration, reader: jspb.BinaryReader): DeviceConfiguration;
 }
 
-export namespace DeviceSnapshot {
+export namespace DeviceConfiguration {
   export type AsObject = {
     id: string,
     deviceId: string,
     deviceVersion: string,
     deviceType: string,
     revision: number,
-    networkSnapshot?: NetworkSnapshotRef.AsObject,
+    networkConfiguration?: NetworkConfigurationRef.AsObject,
     maxNetworkChangeIndex: number,
-    status?: onos_config_snapshot_types_pb.Status.AsObject,
+    status?: onos_config_configuration_types_pb.Status.AsObject,
     created?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     updated?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
 
-export class NetworkSnapshotRef extends jspb.Message {
+export class NetworkConfigurationRef extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
@@ -77,21 +77,21 @@ export class NetworkSnapshotRef extends jspb.Message {
   setIndex(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NetworkSnapshotRef.AsObject;
-  static toObject(includeInstance: boolean, msg: NetworkSnapshotRef): NetworkSnapshotRef.AsObject;
-  static serializeBinaryToWriter(message: NetworkSnapshotRef, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NetworkSnapshotRef;
-  static deserializeBinaryFromReader(message: NetworkSnapshotRef, reader: jspb.BinaryReader): NetworkSnapshotRef;
+  toObject(includeInstance?: boolean): NetworkConfigurationRef.AsObject;
+  static toObject(includeInstance: boolean, msg: NetworkConfigurationRef): NetworkConfigurationRef.AsObject;
+  static serializeBinaryToWriter(message: NetworkConfigurationRef, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NetworkConfigurationRef;
+  static deserializeBinaryFromReader(message: NetworkConfigurationRef, reader: jspb.BinaryReader): NetworkConfigurationRef;
 }
 
-export namespace NetworkSnapshotRef {
+export namespace NetworkConfigurationRef {
   export type AsObject = {
     id: string,
     index: number,
   }
 }
 
-export class Snapshot extends jspb.Message {
+export class Configuration extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
@@ -104,8 +104,8 @@ export class Snapshot extends jspb.Message {
   getDeviceType(): string;
   setDeviceType(value: string): void;
 
-  getSnapshotId(): string;
-  setSnapshotId(value: string): void;
+  getConfigurationId(): string;
+  setConfigurationId(value: string): void;
 
   getChangeIndex(): number;
   setChangeIndex(value: number): void;
@@ -116,20 +116,20 @@ export class Snapshot extends jspb.Message {
   addValues(value?: onos_config_change_device_types_pb.PathValue, index?: number): onos_config_change_device_types_pb.PathValue;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Snapshot.AsObject;
-  static toObject(includeInstance: boolean, msg: Snapshot): Snapshot.AsObject;
-  static serializeBinaryToWriter(message: Snapshot, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Snapshot;
-  static deserializeBinaryFromReader(message: Snapshot, reader: jspb.BinaryReader): Snapshot;
+  toObject(includeInstance?: boolean): Configuration.AsObject;
+  static toObject(includeInstance: boolean, msg: Configuration): Configuration.AsObject;
+  static serializeBinaryToWriter(message: Configuration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Configuration;
+  static deserializeBinaryFromReader(message: Configuration, reader: jspb.BinaryReader): Configuration;
 }
 
-export namespace Snapshot {
+export namespace Configuration {
   export type AsObject = {
     id: string,
     deviceId: string,
     deviceVersion: string,
     deviceType: string,
-    snapshotId: string,
+    configurationId: string,
     changeIndex: number,
     valuesList: Array<onos_config_change_device_types_pb.PathValue.AsObject>,
   }

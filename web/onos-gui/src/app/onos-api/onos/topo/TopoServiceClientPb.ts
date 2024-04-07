@@ -171,7 +171,7 @@ export class TopoClient {
 
   methodInfoWatch = new grpcWeb.MethodDescriptor(
     "Watch",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     WatchRequest,
     WatchResponse,
     (request: WatchRequest) => {

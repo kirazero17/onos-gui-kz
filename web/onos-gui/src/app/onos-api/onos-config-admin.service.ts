@@ -10,13 +10,13 @@ import {
 } from './onos/config/admin/AdminServiceClientPb';
 import {
     CompactChangesRequest, CompactChangesResponse,
-    ListModelsRequest, ListSnapshotsRequest,
+    ListModelsRequest, ListConfigurationsRequest,
     ModelInfo,
     RollbackRequest,
     RollbackResponse
 } from './onos/config/admin/admin_pb';
 import * as grpcWeb from 'grpc-web';
-import {Snapshot} from './onos/config/snapshot/device/types_pb';
+import {Configuration} from './onos/config/configuration/device/types_pb';
 import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/duration_pb';
 import {Observable, Subscriber} from 'rxjs';
 
@@ -89,20 +89,20 @@ export class OnosConfigAdminService {
         return modelsObs;
     }
 
-    requestSnapshots(wildcard: string): Observable<Snapshot> {
-        const snapshotsRequest = new ListSnapshotsRequest();
-        snapshotsRequest.setSubscribe(true);
-        snapshotsRequest.setId(wildcard);
-        const stream = this.adminServiceClient.listSnapshots(
-            snapshotsRequest, {
+    requestConfigurations(wildcard: string): Observable<Configuration> {
+        const configurationsRequest = new ListConfigurationsRequest();
+        configurationsRequest.setSubscribe(true);
+        configurationsRequest.setId(wildcard);
+        const stream = this.adminServiceClient.listConfigurations(
+            configurationsRequest, {
                 Authorization: 'Bearer ' + this.idToken,
             }
         );
-        console.log('ListSnapshots sent to', this.onosConfigUrl);
+        console.log('ListConfigurations sent to', this.onosConfigUrl);
 
-        const snapshotObs = new Observable<Snapshot>((observer: Subscriber<Snapshot>) => {
-            stream.on('data', (snapshot: Snapshot) => {
-                observer.next(snapshot);
+        const configurationObs = new Observable<Configuration>((observer: Subscriber<Configuration>) => {
+            stream.on('data', (configuration: Configuration) => {
+                observer.next(configuration);
             });
             stream.on('error', (error: grpcWeb.RpcError) => {
                 observer.error(error);
@@ -112,7 +112,7 @@ export class OnosConfigAdminService {
             });
             return () => stream.cancel();
         });
-        return snapshotObs;
+        return configurationObs;
     }
 
     requestCompactChanges(retensionSecs: number): Observable<CompactChangesResponse> {

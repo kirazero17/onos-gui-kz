@@ -20,8 +20,8 @@ import {ChangeValuePipe} from './change-value.pipe';
 import {ConfigDashboardComponent} from './config-dashboard/config-dashboard.component';
 import {NetworkChangeComponent} from './config-dashboard/network-change/network-change.component';
 import {DeviceChangeComponent} from './config-dashboard/device-change/device-change.component';
-import {DeviceSnapshotComponent} from './config-dashboard/device-snapshot/device-snapshot.component';
-import {NetworkSnapshotComponent} from './config-dashboard/network-snapshot/network-snapshot.component';
+import {DeviceConfigurationComponent} from './config-dashboard/device-configuration/device-configuration.component';
+import {NetworkConfigurationComponent} from './config-dashboard/network-configuration/network-configuration.component';
 import {DeviceChangeDetailsComponent} from './device-change-details/device-change-details.component';
 import {ChangeStatusPipe} from './change-status.pipe';
 import {ConfigViewComponent} from './config-view/config-view.component';
@@ -48,8 +48,8 @@ export const ID_TOKEN = new InjectionToken<string>('auth.local.idtoken');
         ConfigDashboardComponent,
         NetworkChangeComponent,
         DeviceChangeComponent,
-        DeviceSnapshotComponent,
-        NetworkSnapshotComponent,
+        DeviceConfigurationComponent,
+        NetworkConfigurationComponent,
         DeviceChangeDetailsComponent,
         ChangeStatusPipe,
         ConfigViewComponent,

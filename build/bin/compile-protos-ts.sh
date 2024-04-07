@@ -18,13 +18,13 @@ protoc -I=$proto_imports --js_out=import_style=commonjs:$OUT_DIR/onos-api \
   onos/config/change/network/types.proto
 protoc -I=$proto_imports --js_out=import_style=commonjs:$OUT_DIR/onos-api \
   --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR/onos-api \
-  onos/config/snapshot/types.proto
+  onos/config/configuration/types.proto
 protoc -I=$proto_imports --js_out=import_style=commonjs:$OUT_DIR/onos-api \
   --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR/onos-api \
-  onos/config/snapshot/device/types.proto
+  onos/config/configuration/device/types.proto
 protoc -I=$proto_imports --js_out=import_style=commonjs:$OUT_DIR/onos-api \
   --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR/onos-api \
-  onos/config/snapshot/network/types.proto
+  onos/config/configuration/network/types.proto
 protoc -I=$proto_imports --js_out=import_style=commonjs:$OUT_DIR/onos-api \
   --grpc-web_out=import_style=typescript,mode=grpcwebtext:$OUT_DIR/onos-api \
   onos/config/diags/diags.proto

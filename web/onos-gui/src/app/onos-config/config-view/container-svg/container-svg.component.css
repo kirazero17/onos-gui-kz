@@ -94,17 +94,17 @@ use#editicon {
     fill: #00bfed;
 }
 
-.snapshot rect#box  {
+.configuration rect#box  {
     stroke: #222222;
     stroke-width: 1px;
     fill: #ffffff;
 }
 
-.snapshot text#title {
+.configuration text#title {
     stroke: #a9aba0;
 }
 
-.snapshot text#value {
+.configuration text#value {
     stroke: #111111;
     fill: #111111;
 }

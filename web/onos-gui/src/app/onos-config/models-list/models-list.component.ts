@@ -43,7 +43,7 @@ export class ModelsListComponent extends TableBaseImpl implements OnInit, OnDest
         public modelService: ModelService,
         private orderPipe: OrderPipe,
         private connectivityService: ConnectivityService
-        // public pending: PendingNetChangeService,
+        // public pending: PendingNetConfigDiagsService,
     ) {
         super(fs, log, wss, 'models', 'id');
         this.is.loadIconDef('plus');

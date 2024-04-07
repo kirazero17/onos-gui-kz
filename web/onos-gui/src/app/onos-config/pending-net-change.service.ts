@@ -28,7 +28,7 @@ export const PENDING_U = 'Pending';
 @Injectable({
     providedIn: 'root'
 })
-export class PendingNetChangeService {
+export class PendingNetConfigDiagsService {
     hasPendingChange: boolean = false;
     pendingNetChange: NetChange = undefined;
     pendingConfigValues: Map<string, Array<ChangeValue>>;
@@ -40,7 +40,7 @@ export class PendingNetChangeService {
         this.pendingNetChange.setChangesList(Array(0));
         this.pendingConfigValues = new Map<string, Array<ChangeValue>>();
         this.pendingNewConfiguration = undefined;
-        console.log('PendingNetChangeService constructed');
+        console.log('PendingNetConfigDiagsService constructed');
     }
 
     addPendingChange(pendingName?: string) {

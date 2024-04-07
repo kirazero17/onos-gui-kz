@@ -26,7 +26,7 @@ device in a tree view.
 * It contains a panel that lists all of the `DeviceChanges` that have happened
 to the device. Each of these can be hidden or displayed (like a layer) that
 can be used to see the history of config changes.
-* An additional layer shows the `Snapshot` for that device
+* An additional layer shows the `Configuration` for that device
 * Another layer shows the Operational State (from the OpState cache) when
 connected to a real device
 * Another layer shows all of the configurable (Read Write) paths possible for
@@ -56,4 +56,4 @@ When the **Config view dashboard** is loaded:
 1. nginx sends the response back to the browser and the callback function is called
 1. Inside the browser the callback updates the `networkChanges` object inside the ConfigDashboardComponent
 1. the binding in the config-dashboard.component.html page is alerted to the updated value and refreshes the display
-1. similar calls are made to load the `snapshots` and `devices`
+1. similar calls are made to load the `configurations` and `devices`

@@ -11,11 +11,11 @@ import {OnosConfigAdminService} from '../../../onos-api/onos-config-admin.servic
 import {Object as EntityObject} from '../../../onos-api/onos/topo/topo_pb';
 
 @Component({
-    selector: '[onos-network-snapshot]',
-    templateUrl: './network-snapshot.component.html',
-    styleUrls: ['./network-snapshot.component.css']
+    selector: '[onos-network-configuration]',
+    templateUrl: './network-configuration.component.html',
+    styleUrls: ['./network-configuration.component.css']
 })
-export class NetworkSnapshotComponent implements OnInit {
+export class NetworkConfigurationComponent implements OnInit {
     @Input() deviceSortCriterion: (a: KeyValue<string, EntityObject>, b: KeyValue<string, EntityObject>) => number
         = DeviceService.entitySorterForwardAlpha;
     @Output() dsSelected = new EventEmitter<string>();

@@ -69,7 +69,7 @@ export class TrafficClient {
 
   methodInfoListCells = new grpcWeb.MethodDescriptor(
     "ListCells",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     ListCellsRequest,
     ListCellsResponse,
     (request: ListCellsRequest) => {
@@ -91,7 +91,7 @@ export class TrafficClient {
 
   methodInfoListRoutes = new grpcWeb.MethodDescriptor(
     "ListRoutes",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     ListRoutesRequest,
     ListRoutesResponse,
     (request: ListRoutesRequest) => {
@@ -113,7 +113,7 @@ export class TrafficClient {
 
   methodInfoListUes = new grpcWeb.MethodDescriptor(
     "ListUEs",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     ListUesRequest,
     ListUesResponse,
     (request: ListUesRequest) => {

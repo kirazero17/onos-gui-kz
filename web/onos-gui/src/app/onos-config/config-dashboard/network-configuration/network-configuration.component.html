@@ -4,10 +4,10 @@ SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetwor
 SPDX-License-Identifier: Apache-2.0
 -->
 
-<td class="nw-ss-title">Snapshot</td>
+<td class="nw-ss-title">Configuration</td>
 <td class="dev-ss-cell"
     *ngFor="let entity of deviceService.entityList | keyvalue:deviceSortCriterion"
-    onos-device-snapshot
-    [deviceSnapshot]="deviceService.deviceSnapshotMap.get(entity.key)"
+    onos-device-configuration
+    [deviceConfiguration]="deviceService.deviceConfigurationMap.get(entity.key)"
     (selected)="itemSelected(entity.key)">
 </td>

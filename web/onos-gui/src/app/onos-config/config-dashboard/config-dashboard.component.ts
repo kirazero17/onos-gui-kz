@@ -92,9 +92,9 @@ export class ConfigDashboardComponent implements OnInit, OnDestroy {
                 'Choose a different application from the menu']);
         });
 
-        this.deviceService.watchSnapshots((err: grpcWeb.RpcError) => {
+        this.deviceService.watchConfigurations((err: grpcWeb.RpcError) => {
             this.connectivityService.showVeil([
-                'Device Snapshot service gRPC error', String(err.code), err.message,
+                'Device Configuration service gRPC error', String(err.code), err.message,
                 'Please ensure onos-config is reachable',
                 'Choose a different application from the menu']);
         });
@@ -104,7 +104,7 @@ export class ConfigDashboardComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.topoDeviceService.stopWatchingTopoEntity();
         this.topoDeviceService.stopWatchingTopoRelations();
-        this.deviceService.stopWatchingSnapshots();
+        this.deviceService.stopWatchingConfigurations();
         this.nwchangesSub.unsubscribe();
         console.log('Stopped watching NetworkChanges');
     }
@@ -152,21 +152,21 @@ export class ConfigDashboardComponent implements OnInit, OnDestroy {
         this.selectedChange = deviceChange;
     }
 
-    deviceSnapshotSelected(deviceSnapshotId: string) {
-        console.log('Device snapshot selected', deviceSnapshotId);
-        if (deviceSnapshotId === this.selId) {
+    deviceConfigurationSelected(deviceConfigurationId: string) {
+        console.log('Device configuration selected', deviceConfigurationId);
+        if (deviceConfigurationId === this.selId) {
             this.selId = '';
             this.selectedChange = undefined;
             return;
         }
-        this.selId = deviceSnapshotId;
-        const snapshot = this.deviceService.deviceSnapshotMap.get(deviceSnapshotId);
-        // Fake the snapshot as a DeviceChange, so we can display the same way
+        this.selId = deviceConfigurationId;
+        const configuration = this.deviceService.deviceConfigurationMap.get(deviceConfigurationId);
+        // Fake the configuration as a DeviceChange, so we can display the same way
         const fakeChange = new Change();
-        fakeChange.setDeviceId(snapshot.getDeviceId());
-        fakeChange.setDeviceVersion(snapshot.getDeviceVersion());
+        fakeChange.setDeviceId(configuration.getDeviceId());
+        fakeChange.setDeviceVersion(configuration.getDeviceVersion());
         const values = new Array<ChangeValue>();
-        snapshot.getValuesList().forEach((pathValue: PathValue) => {
+        configuration.getValuesList().forEach((pathValue: PathValue) => {
             const cv = new ChangeValue();
             cv.setPath(pathValue.getPath());
             cv.setValue(pathValue.getValue());

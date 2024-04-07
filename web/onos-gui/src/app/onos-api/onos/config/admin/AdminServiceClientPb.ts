@@ -13,14 +13,14 @@ import * as google_protobuf_duration_pb from 'google-protobuf/google/protobuf/du
 import * as gogoproto_gogo_pb from '../../../gogoproto/gogo_pb';
 // import * as github_com_openconfig_gnmi_proto_gnmi_gnmi_pb from '../../../github.com/openconfig/gnmi/proto/gnmi/gnmi_pb';
 import * as onos_config_change_device_types_pb from '../../../onos/config/change/device/types_pb';
-import * as onos_config_snapshot_device_types_pb from '../../../onos/config/snapshot/device/types_pb';
+import * as onos_config_configuration_device_types_pb from '../../../onos/config/configuration/device/types_pb';
 
 import {
   Chunk,
   CompactChangesRequest,
   CompactChangesResponse,
   ListModelsRequest,
-  ListSnapshotsRequest,
+  ListConfigurationsRequest,
   ModelInfo,
   RegisterResponse,
   RollbackRequest,
@@ -47,7 +47,7 @@ export class ConfigAdminServiceClient {
 
   methodInfoListRegisteredModels = new grpcWeb.MethodDescriptor(
     "ModelList",
-    grpcWeb.MethodType.UNARY,
+    grpcWeb.MethodType.SERVER_STREAMING,
     ListModelsRequest,
     ModelInfo,
     (request: ListModelsRequest) => {
@@ -92,26 +92,26 @@ export class ConfigAdminServiceClient {
       callback);
   }
 
-  methodInfoListSnapshots = new grpcWeb.MethodDescriptor(
-    "ListSnapshot",
-    grpcWeb.MethodType.UNARY,
-    ListSnapshotsRequest,
-    onos_config_snapshot_device_types_pb.Snapshot,
-    (request: ListSnapshotsRequest) => {
+  methodInfoListConfigurations = new grpcWeb.MethodDescriptor(
+    "ListConfigurations",
+    grpcWeb.MethodType.SERVER_STREAMING,
+    ListConfigurationsRequest,
+    onos_config_configuration_device_types_pb.Configuration,
+    (request: ListConfigurationsRequest) => {
       return request.serializeBinary();
     },
-    onos_config_snapshot_device_types_pb.Snapshot.deserializeBinary
+    onos_config_configuration_device_types_pb.Configuration.deserializeBinary
   );
 
-  listSnapshots(
-    request: ListSnapshotsRequest,
+  listConfigurations(
+    request: ListConfigurationsRequest,
     metadata?: grpcWeb.Metadata) {
     return this.client_.serverStreaming(
       this.hostname_ +
-        '/onos.config.admin.ConfigAdminService/ListSnapshots',
+        '/onos.config.admin.ConfigAdminService/ListConfigurations',
       request,
       metadata || {},
-      this.methodInfoListSnapshots);
+      this.methodInfoListConfigurations);
   }
 
   methodInfoCompactChanges = new grpcWeb.MethodDescriptor(

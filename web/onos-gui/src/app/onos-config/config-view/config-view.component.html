@@ -39,10 +39,10 @@ SPDX-License-Identifier: Apache-2.0
             </svg:desc>
 <!--            <svg:g #gridFull onos-gridsvg> To optionally display a grid - development-->
 <!--            </svg:g>-->
-            <svg:g *ngIf="snapshotVisible" onos-layer-svg #snapshotLayer
-                   [layerId]="'snapshot'" [layerType]="5"
-                   [classes]="['snapshot']"
-                   [changeValues]="snapshotChangeValues"
+            <svg:g *ngIf="configurationVisible" onos-layer-svg #configurationLayer
+                   [layerId]="'configuration'" [layerType]="5"
+                   [classes]="['configuration']"
+                   [changeValues]="configurationChangeValues"
                    [hierarchyDescendants]="hierarchy.treeLayout?.descendants()"
                    [hierarchyLinks]="hierarchy.treeLayout?.links()">
             </svg:g>
